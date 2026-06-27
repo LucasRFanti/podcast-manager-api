@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { PodcastModel } from "../models/podcast-model";
 
-const pathData = path.join(__dirname, "../repositories/podcasts.json");
+const pathData = path.join(process.cwd(), "podcasts.json");
 
 export const repositoryPodcast = async (
     podcastName?: string
