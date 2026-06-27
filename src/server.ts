@@ -1,16 +1,7 @@
 import * as http from "http";
-import { getEnvironmentData } from "worker_threads";
-import { getListEpisodes } from "./controllers/podcasts-controller"
+import { app } from "./app";
 
-const server = http.createServer(
-    async (req: http.IncomingMessage, res: http.ServerResponse) => {
-
-        if(req.method === "GET"){
-            await getListEpisodes(req, res);
-        }
-
-    }
-);
+const server = http.createServer(app);
 
 const port = process.env.PORT;
 
